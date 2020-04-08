@@ -6,7 +6,7 @@ export class RandomUserService extends Component {
      * get users from web API
      * @param config 
      */
-    static get(config: any) {
-        return fetch('https://randomuser.me/api/?results=' + config.size)
+    static get(size: number) {
+        return fetch('https://randomuser.me/api/?results=' + size)
     };
 }
