@@ -3,11 +3,12 @@ import './App.css';
 import Table from './components/Table/Table';
 import { AppState } from './interfaces/AppState';
 import { RandomUserService } from './services/RandomUsersService';
+import Config from './utils/Config';
 
 class App extends React.Component<{}, AppState> {
 
   render() {
-    const { isLoaded, dataSource, error } = this.state;
+    const { isLoaded, dataSource, columns, error } = this.state;
     // different rendering depends on the API response
     if (error) {
       return <div>Error : {error.message}</div>;
@@ -15,7 +16,7 @@ class App extends React.Component<{}, AppState> {
       return <div>Loading...</div>;
     } else {
       return (
-        <Table dataSource={dataSource} />
+        <Table dataSource={dataSource} columns={columns} />
       );
     }
   }
@@ -35,19 +36,18 @@ class App extends React.Component<{}, AppState> {
   }
 
   /**
-   * 
+   * init state with API request
    */
   private initState() {
-    const config = {
-      size: 100
-    }
-    RandomUserService.get(config)
+
+    RandomUserService.get(Config.size)
       .then(res => res.json())
       .then((response: any) => {
         console.log('responseJson', response);
         this.setState({
           isLoaded: true,
-          dataSource: response.results
+          dataSource: response.results,
+          columns: Config.columns
         });
       },
         (error: any) => {
