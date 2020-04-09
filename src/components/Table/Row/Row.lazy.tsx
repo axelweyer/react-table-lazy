@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 
-/*const LazyRow = lazy(() => import('./Row'));
+const LazyRow = lazy(() => import('./Row'));
 
 const Row = (props: JSX.IntrinsicAttributes & { children?: React.ReactNode; }) => (
   <Suspense fallback={null}>
@@ -8,4 +8,4 @@ const Row = (props: JSX.IntrinsicAttributes & { children?: React.ReactNode; }) =
   </Suspense>
 );
 
-export default Row;*/
+export default Row;

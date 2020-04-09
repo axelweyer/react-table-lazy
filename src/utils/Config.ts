@@ -10,7 +10,7 @@ export default class Config {
         new Column('name.title', 'asc'),
         new Column('name.first', 'asc'),
         new Column('name.last', 'asc'),
-        new Column('location.city', 'asc'),
+        new Column('location.country', 'asc'),
         new Column('email', 'asc')
     ];
 };

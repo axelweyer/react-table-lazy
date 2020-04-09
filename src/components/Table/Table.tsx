@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import './Table.scss';
 import Column from '../../models/Column';
 import Row from './Row/Row';
@@ -59,9 +59,10 @@ export default class Table extends React.Component<MyProps, MyState> {
 
     return this.props.columns.map((column: Column) => {
       return (
-        <th onClick={() => this.getSortedDatasource(column, true)} key={column.label} className={this.isActiveColumn(column) ? 'active' : ''}>
+        <th onMouseDown={() => this.getSortedDatasource(column, true)} key={column.label} className={this.isActiveColumn(column) ? 'active' : ''}>
           {column.label.toUpperCase()}
           {this.displaySortIcon(column)}
+          <div className="resizing" onMouseDown={(e) => { this.resizeColumn(e) }}></div>
         </th>
       );
     })
@@ -152,5 +153,35 @@ export default class Table extends React.Component<MyProps, MyState> {
       return true;
     }
     return false;
+  }
+
+  /**
+   * resize column depends on mouse moving
+   * @param e 
+   */
+  private resizeColumn(e: MouseEvent) {
+
+    e.stopPropagation(); // disable other onMouseDown (sorting)
+
+    // init variables
+    var pageX: any, currentColumn: any, currentColumnWidth: any;
+    currentColumn = (e.target as HTMLTextAreaElement).parentElement;
+    pageX = e.pageX;
+    currentColumnWidth = currentColumn.offsetWidth
+
+    // handle mouse move => resize column
+    document.addEventListener('mousemove', function (e) {
+      // calculate diff
+      if (currentColumn) {
+        var diffX = e.pageX - pageX;
+        currentColumn.style.width = (currentColumnWidth + diffX) + 'px'; // resize current column
+      }
+    });
+    // handle mouse up => stop resizing
+    document.addEventListener('mouseup', function (e) {
+      currentColumn = undefined;
+      pageX = undefined;
+      currentColumnWidth = undefined;
+    });
   }
 }
