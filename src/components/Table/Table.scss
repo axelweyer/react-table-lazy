@@ -2,6 +2,13 @@ $primary: #4B74FF;
 $primary-light: #E9EDFB;
 $grey: #f5f5f5;
 $border-radius: 0px;
+@mixin transition() {
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -ms-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+}
 
 #content {
     width: 100%;
@@ -23,7 +30,13 @@ $border-radius: 0px;
                     font-weight: 700;
                     padding: 10px;
                     background: $grey;
+                    cursor: pointer;
+                    @include transition();
 
+                    &:hover {
+                        color: $primary;
+                        @include transition();
+                    }
                     &:first-child {
                         border-top-left-radius: $border-radius;
                         border-bottom-left-radius: $border-radius;
@@ -32,6 +45,12 @@ $border-radius: 0px;
                         border-top-right-radius: $border-radius;
                         border-bottom-right-radius: $border-radius;
                     }
+                    &.active {
+                        color: $primary;
+                    }
+                    span {
+                        margin-left: 10px;
+                    }
                 }
             }
         }
@@ -39,12 +58,14 @@ $border-radius: 0px;
             tr {
                 &:hover td {
                     background: $primary-light;
+                    @include transition();
                 }
                 td {
                     border-bottom: 5px solid $grey;
                     padding: 10px;
                     font-size: 14px;
                     background: white;
+                    @include transition();
 
                     &:first-child {
                         border-top-left-radius: $border-radius;
