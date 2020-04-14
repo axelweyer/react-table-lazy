@@ -6,9 +6,11 @@ const Row = (props: any) => {
   return props.keys.map((key: any, index: number) => {
     const value = get(props.data, key);
     return (
-      <td key={value}>
-        {value}
-      </td>
+      <React.Fragment>
+        <td key={value}>
+          {value}
+        </td>
+      </React.Fragment>
     );
   })
 }

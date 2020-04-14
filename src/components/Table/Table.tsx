@@ -79,10 +79,13 @@ export default class Table extends React.Component<MyProps, MyState> {
 
     // init rows array with TR of the TABLE
     sortedDataSource.forEach(function (row: any, index: any) {
+      const keyTr = 'tr' + index;
       rows.push(
-        <tr key={index}>
-          <Row key={index} data={row} keys={columnPaths} />
-        </tr>
+        <React.Fragment key={index}>
+          <tr>
+            <Row key={keyTr} data={row} keys={columnPaths} />
+          </tr>
+        </React.Fragment>
       )
     });
 
