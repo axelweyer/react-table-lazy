@@ -7,7 +7,7 @@ const Row = (props: any) => {
     const value = get(props.data, key);
     return (
       <React.Fragment>
-        <td key={value}>
+        <td key={value} data-testid='td'>
           {value}
         </td>
       </React.Fragment>

@@ -1,0 +1,114 @@
+[
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Eelis",
+            "last": "Anttila"
+        },
+        "location": {
+            "street": {
+                "number": 8124,
+                "name": "Reijolankatu"
+            },
+            "city": "Tuusniemi",
+            "state": "Uusimaa",
+            "country": "Finland",
+            "postcode": 20655,
+            "coordinates": {
+                "latitude": "-7.4466",
+                "longitude": "-83.3443"
+            },
+            "timezone": {
+                "offset": "-8:00",
+                "description": "Pacific Time (US & Canada)"
+            }
+        },
+        "email": "eelis.anttila@example.com",
+        "login": {
+            "uuid": "202caee1-029a-43c9-9e93-ea56e67fa1b7",
+            "username": "orangeduck891",
+            "password": "tempest",
+            "salt": "aiJPpXK2",
+            "md5": "dd48d2c1946ee1f97a3a8a575dfbd20b",
+            "sha1": "5780c4e281ac31493d9ac52c9a605d2b899053d1",
+            "sha256": "20b6eac2a63ade5c13d49427245357cdb1afa70ebfdfe1e37ed2547fd84cc121"
+        },
+        "dob": {
+            "date": "1981-03-16T13:28:46.073Z",
+            "age": 39
+        },
+        "registered": {
+            "date": "2008-07-24T10:38:00.464Z",
+            "age": 12
+        },
+        "phone": "09-349-617",
+        "cell": "044-048-68-75",
+        "id": {
+            "name": "HETU",
+            "value": "NaNNA501undefined"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/37.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/37.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/37.jpg"
+        },
+        "nat": "FI"
+    },
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Otto",
+            "last": "Mattila"
+        },
+        "location": {
+            "street": {
+                "number": 3654,
+                "name": "Mannerheimintie"
+            },
+            "city": "Sievi",
+            "state": "Central Ostrobothnia",
+            "country": "Finland",
+            "postcode": 17537,
+            "coordinates": {
+                "latitude": "-7.7612",
+                "longitude": "-104.7745"
+            },
+            "timezone": {
+                "offset": "-7:00",
+                "description": "Mountain Time (US & Canada)"
+            }
+        },
+        "email": "otto.mattila@example.com",
+        "login": {
+            "uuid": "c9356c11-cad2-446b-89d5-8a713e38a4a9",
+            "username": "ticklishfrog554",
+            "password": "medical",
+            "salt": "VP2lqATp",
+            "md5": "02ef2cd6b4e07b6abeb2ee71b5788906",
+            "sha1": "552da6b285181ba73c923c9e053870942a6d4418",
+            "sha256": "67718e0c7a73ad82259a1f5afe37d2e7f7cf555f9c061d20429ddd863aae36a6"
+        },
+        "dob": {
+            "date": "1981-09-09T11:50:42.890Z",
+            "age": 39
+        },
+        "registered": {
+            "date": "2010-08-03T10:15:16.514Z",
+            "age": 10
+        },
+        "phone": "03-925-626",
+        "cell": "045-031-89-34",
+        "id": {
+            "name": "HETU",
+            "value": "NaNNA939undefined"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/9.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/9.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/9.jpg"
+        },
+        "nat": "FI"
+    }
+]

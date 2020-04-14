@@ -6,10 +6,11 @@ import Row from './Row';
 describe('<Row />', () => {
   afterEach(cleanup);
 
-  /*test('it should mount', () => {
-    const { getByTestId } = render(<Row />);
-    const row = getByTestId('Row');
+  test('mount with props', () => {
+    const rowMock = {name: 'test'}
+    let { getByTestId } = render(<Row key={0} data={[rowMock]} keys={['name']} />);
+    let row = getByTestId('td');
 
     expect(row).toBeInTheDocument();
-  });*/
-});
+  });
+ });

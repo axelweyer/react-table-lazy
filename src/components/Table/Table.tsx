@@ -19,7 +19,7 @@ export default class Table extends React.Component<MyProps, MyState> {
 
   render() {
     return (
-      <div id="content">
+      <div id="content" data-testid='content'>
         <table>
           <thead>
             <tr>{this.getHeader()}</tr>
@@ -98,6 +98,10 @@ export default class Table extends React.Component<MyProps, MyState> {
    * @param changeColumnSort 
    */
   private getSortedDatasource(column: Column, changeColumnSort: boolean): any[] {
+    
+    if (this.props.dataSource.length === 0 || column == null) {
+      return [];
+    }
 
     let sortedItems: any[] = sortBy(this.props.dataSource, column.path);
 
