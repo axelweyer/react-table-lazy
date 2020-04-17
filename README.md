@@ -1,3 +1,20 @@
+# Goals of the project
+
+Implement a generic reusable table component (in React), and demo it using the api https://randomuser.me/ . The features of the table should be :
+- Column sorting
+- No pagination but use lazy-loading to load table data by chunk
+- Column resizing
+
+The only run-time dependencies you are authorized to use are:
+- React/React-DOM
+- Lodash or underscore.js, or a utility of that sort for data manipulation
+- React-draggable or library of your choice for the column resizing
+
+No libraries for the lazy-loading
+
+--
+--
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
