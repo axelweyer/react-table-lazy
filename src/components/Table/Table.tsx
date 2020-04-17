@@ -4,18 +4,18 @@ import Column from '../../models/Column';
 import Row from './Row/Row';
 import sortBy from 'lodash/sortBy';
 
-export interface MyProps {
+export interface TableProps {
   dataSource: any[],
   columns: Column[]
 };
-export interface MyState {
+export interface TableState {
   dataSource: any[];
   header: string[];
   rows: any[];
   activeColumn: Column;
 }
 
-export default class Table extends React.Component<MyProps, MyState> {
+export default class Table extends React.Component<TableProps, TableState> {
 
   render() {
     return (
@@ -32,7 +32,7 @@ export default class Table extends React.Component<MyProps, MyState> {
     );
   }
 
-  constructor(props: MyProps) {
+  constructor(props: TableProps) {
     super(props);
     this.state = {
       dataSource: [],
@@ -83,7 +83,7 @@ export default class Table extends React.Component<MyProps, MyState> {
       rows.push(
         <React.Fragment key={index}>
           <tr>
-            <Row key={keyTr} data={row} keys={columnPaths} />
+            <Row key={keyTr} data={row} keys={columnPaths} keyTr={keyTr} />
           </tr>
         </React.Fragment>
       )
@@ -184,6 +184,7 @@ export default class Table extends React.Component<MyProps, MyState> {
         currentColumn.style.width = (currentColumnWidth + diffX) + 'px'; // resize current column
       }
     });
+    
     // handle mouse up => stop resizing
     document.addEventListener('mouseup', function (e) {
       currentColumn = undefined;

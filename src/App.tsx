@@ -40,10 +40,10 @@ class App extends React.Component<{}, AppState> {
    */
   private initState() {
 
-    RandomUserService.get(Config.size)
+    RandomUserService.get(Config.size) // api request
       .then(res => res.json())
       .then((response: any) => {
-        console.log('responseJson', response);
+        // set state with data
         this.setState({
           isLoaded: true,
           dataSource: response.results,
@@ -51,6 +51,7 @@ class App extends React.Component<{}, AppState> {
         });
       },
         (error: any) => {
+          // data is loaded, but with an error
           this.setState({
             isLoaded: true,
             error

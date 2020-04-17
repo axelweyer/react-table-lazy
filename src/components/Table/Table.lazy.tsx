@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
-import { MyProps } from './Table';
+import { TableProps } from './Table';
 
 const LazyTable = lazy(() => import('./Table'));
 
-const Table = (props: MyProps) => (
+const Table = (props: TableProps) => (
   <Suspense fallback={<div>Loading...</div>}>
     <LazyTable dataSource={props.dataSource} columns={props.columns} />
   </Suspense>
